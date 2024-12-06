@@ -46,11 +46,11 @@ Now make an ext3 file system on the partition you just created
 >```
 >$ mkfs.ext3 /dev/sda1
 >```
-```
-$ rebuildfstab
-```
+>```
+>$ rebuildfstab
+>```
 
-Moun the partition
+Mount the partition
 >```
 >$ mount /mnt/sda1
 >```
@@ -58,9 +58,9 @@ Moun the partition
 >$ mount /dev/sda1 /mnt/sda1
 >```
 
-```
-$ mkdir -p /mnt/sda1/boot/grub
-```
+>```
+>$ mkdir -p /mnt/sda1/boot/grub
+>```
 
 Mount the core iso
 >```
