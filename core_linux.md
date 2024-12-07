@@ -1,7 +1,7 @@
 ## Core Linux manual installation in QEMU
 First off, make sure you have installed qemu. You can also use virt-manager if you wish.
 
-> Where 30G is the size of the image, and so the available size to out virtualized operating system, and core.img will be the name of the image itself.
+> Where `30G` is the size of the image, and so the available size to out virtualized operating system, and `core.img` will be the name of the image itself.
 > 
 >```
 > $ qemu-img create -f qcow2 core.img 30G
@@ -9,8 +9,8 @@ First off, make sure you have installed qemu. You can also use virt-manager if y
 
 Download the Core iso from the [official website](http://www.tinycorelinux.net/downloads.html)
 
-Now run the following command to execute the image created before and load the core iso file.
->Where 3096 MB is the amount of RAM given to the virtual machine, core.img is the name of the image and Core-current.iso is the iso image you just downloaded.
+Now run the following command to execute the image created before and load the Core iso file.
+>Where `3096 MB` is the amount of RAM given to the virtual machine, `core.img` is the name of the image and `Core-current.iso` is the iso image you just downloaded.
 >
 >```
 >$ qemu-system-x86_64 -m 3096 -hda core.img -cdrom Core-current.iso -boot d
@@ -21,7 +21,7 @@ You will have to install a few extensions from the live environment using the Ap
 > ```
 > $ tce-ab
 > ```
-> From here install ```grub2-multi, cfdisk, lvm2-dev```
+> From here install `grub2-multi, cfdisk, lvm2-dev`
 
 From now you will need root privileges  very often so run the following to log as root
 >```
@@ -42,7 +42,7 @@ Now,  create a **100M** **primary** partition with the **bootable** flag
 
 Now make an ext3 file system on the partition you just created
 
->Where /dev/sda1 is the path of the partition
+>Where `/dev/sda1` is the path of the partition
 >```
 >$ mkfs.ext3 /dev/sda1
 >```
@@ -62,7 +62,7 @@ Mount the partition
 >$ mkdir -p /mnt/sda1/boot/grub
 >```
 
-Mount the core iso
+Mount the Core iso
 >```
 >$ mount /mnt/sr0
 >```
@@ -72,23 +72,23 @@ Copy all the files from the boot folder in the iso to the boot folder in the boo
 >$ cp -p /mnt/sr0/boot/* /mnt/sda1/boot
 >```
 
-Create the tinycore extensions folder
+Create the `tce`, tinycore extensions, folder
 >```
 >$ mkdir -p /mnt/sda1/tce
 >```
 > It will contain all the extensions loaded at boot
 
-Create mydata.tgz where all the personal files in /opt and /home are going to be stored for persistency
+Create `mydata.tgz` where all the personal files in `/opt` and `/home` are going to be stored for persistency
 >```
 >$ touch /mnt/sda1/tce/mydata.tgz
 >```
 
-Copy grub files from /usr/lib/grub/i386-pc/ to the grub folder
+Copy grub files from `/usr/lib/grub/i386-pc/` to the grub folder
 >```
 >$ cp -p /usr/lib/grub/i386-pc/* /mnt/hda1/boot/grub/
 >```
 
-Copy the grub2 files of the installed extension from /tmp to the grub folder
+Copy the grub2 files of the installed extension from `/tmp` to the grub folder
 >```
 >$ cp -p /tmp/tcloop/grub2multi/usr/lib/grub/i386-pc/* /mnt/hda1/boot/grub/
 >```
@@ -98,7 +98,7 @@ Install grub and specify the boot directory
 >$ sudo grub-install --boot-directory=/mnt/sda1/boot /dev/sda
 >```
 
-Edit the grub options in menu.lst
+Edit the grub options in `menu.lst`
 
 >```
 >$ vi /mnt/sda1/boot/grub/menu.lst
@@ -112,12 +112,12 @@ Edit the grub options in menu.lst
 >	}
 >```
 
-Create a symlink from menu.lst to grub.conf, the filename searched by the os
+Create a symlink from `menu.lst` to `grub.conf`, the filename searched by the os
 >```
 >$ ln -T /mnt/sda1/boot/grub/menu.lst /mnt/sda1/boot/grub/grub.conf
 >```
 
-Map /dev/sda as the default device loaded by grub
+Map `/dev/sda` as the default device loaded by grub
 >```
 >$ echo '(hd0) /dev/sda' >grub-device.map
 >```
