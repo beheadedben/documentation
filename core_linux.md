@@ -54,7 +54,8 @@ Mount the partition
 >```
 >$ mount /mnt/sda1
 >```
->This is equal to ```
+>This is equal to
+>```
 >$ mount /dev/sda1 /mnt/sda1
 >```
 
