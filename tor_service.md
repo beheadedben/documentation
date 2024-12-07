@@ -1,4 +1,4 @@
-## Tor service self-hosting
+## Tor Service Self-Hosting
 Install the tor package
 >In openSUSE run the following command
 >```
