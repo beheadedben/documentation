@@ -7,3 +7,5 @@
 [![TorService](https://img.shields.io/badge/Tor_Service_Doc-purple)](tor_service.md)
 [![Termux](https://img.shields.io/badge/Termux_Doc-grey)](termux.md)
 
+A collection of personal documentation, dotfiles, rices, and notes.
+Most have been tested on openSUSE Tumbleweed, but should work on any distribution.
