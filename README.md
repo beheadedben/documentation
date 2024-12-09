@@ -6,6 +6,6 @@
 [![Picom](https://img.shields.io/badge/Picom_Dots-orange?style=for-the-badge)](picom.md)
 [![TorService](https://img.shields.io/badge/Tor_Service_Documentation-purple?style=for-the-badge&logo=tor%20project&logoColor=white)](tor_service.md)
 [![Termux](https://img.shields.io/badge/Termux_Documentation-grey?style=for-the-badge&logo=gnome%20terminal&logoColor=white)](termux.md)
-[![Alacritty](https://img.shields.io/badge/Alacritty_Dots-green?style=for-the-badge&logo=alacritty)](alacritty)
+[![Alacritty](https://img.shields.io/badge/Alacritty_Dots-yellow?style=for-the-badge&logo=alacritty&logoColor=white)](alacritty)
 A collection of personal documentation, dotfiles, rices, and notes.
 Most have been tested on openSUSE Tumbleweed, but should work on any distribution.
