@@ -13,7 +13,6 @@
 [![Tor](https://img.shields.io/badge/Tor-grey?style=for-the-badge&logo=tor%20project&logoColor=white)](tor_service.md)
 [![Monero](https://img.shields.io/badge/Monero-grey?style=for-the-badge&logo=monero&logoColor=white)](monero)
 
-&logoColor=white
 A collection of personal documentation, dotfiles, rices, and notes.
 Most have been tested on openSUSE Tumbleweed, but should work on any distribution.
 
