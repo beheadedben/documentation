@@ -1,0 +1,24 @@
+[window]
+opacity = 1.0
+padding = { x = 15, y = 15}
+decorations = "Full"
+blur = true
+
+[scrolling]
+history = 10000
+
+[font]
+normal = {family = "Hack", style = "Regular"}
+bold = { family = "Hack", style = "Bold" }
+size = 13
+
+[cursor]
+style = { shape = "Beam", blinking = "Always"}
+
+[colors]
+cursor = {cursor = "#fbdd00"}
+primary = { background = "#202020"}
+selection = { background = "#1B8BEE"}
+
+[terminal]
+shell = { program = "/bin/fish" }

@@ -57,3 +57,10 @@ Download and install `vim-plug`
 For each plugin listed in the `.vimrc` file look it up on [VimAwesome](https://vimawesome.com/) for instructions
 
 Run `:PlugInstall` in vim to install and `:PlugUpdate` to update the plugins in your `.vimrc`
+
+If when you want to preview a plantum file in vim with `:PlantumlOpen`, an application that's not your browser opens,
+you have to set your browser to be the default application for html files like so
+>```
+>$ xdg-mime default librewolf.desktop text/html
+>```
+>Where `librewolf` is your browser of choice

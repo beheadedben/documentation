@@ -1,0 +1,34 @@
+# DefaultFont
+DefaultFont "xft:NotoSans:size=12:antialias=True"
+Colorset 2 fg #ffffff, bg #000000
+######
+# 3: Colorsets
+#
+#   0 - Default
+#   1 - Inactive Windows
+#   2 - Active Window
+#   3 - Inactive Windows Borders
+#   4 - Active Windows Borders
+#   5 - Menu - Inactive Item
+#   6 - Menu - Active Item
+#   7 - Menu - Grayed Item
+#   8 - Menu - Title
+#  10+ Modules
+###########
+Colorset 0  fg #ffffff, bg #003c3c
+Colorset 1  fg #000000, bg #8f9f8f
+Colorset 2  fg #ffffff, bg #003c3c
+Colorset 3  fg black, bg #4d4d4d, hi #676767, sh #303030
+Colorset 4  fg black, bg #2d2d2d, hi #474747, sh #101010
+Colorset 5  fg #000000, bg #ffffff
+Colorset 6  fg #ffffff, bg #2d2d2d
+Colorset 7  fg grey30, bg #ffffff
+Colorset 8  fg #ffffff, bg #003c3c
+
+# MenuStyles
+MenuStyle * MenuColorset 0, ActiveColorset 6, GreyedColorset 7, TitleColorset 8
+MenuStyle * Hilight3DOff, HilightBack, HilightTitleBack, SeparatorsLong
+MenuStyle * TrianglesSolid, TrianglesUseFore
+MenuStyle * ItemFormat "%|%3.1i%5.3l%5.3>%|"
+MenuStyle * Font "xft:NotoSans:size=12:antialias=True"
+

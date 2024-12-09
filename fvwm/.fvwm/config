@@ -1,0 +1,234 @@
+
+#########
+# Fonts #
+#########
+
+DefaultFont "xft:NotoSans:Regular:size=12:antialias=True"
+
+
+DestroyFunc StartFunction
+AddToFunc   StartFunction
+# + I Test (Init) Exec exec stalonetray 
+#+ I Test (Init) Exec fvwm-root -r \
+    $[FVWM_USERDIR]/wallpapers/background.png
+# + I Test (Init) Exec exec vlc
++ I Test (Restart) PipeRead 'echo Echo Restarted: `date`'
++ I Module FvwmBanner
+# + I Module FvwmPager 0 2
++ I Module FvwmPager 0 3 
++ I Module FvwmButtons MyButtons
++ I Module FvwmBacker
+
+*FvwmPager: Geometry 70x300+0+0
+#*FvwmPager: DeskColor 0 #ff0000
+*FvwmPager: DeskPixmap 0 /home/spyro/.fvwm/pager.png
+*FvwmPager: DeskPixmap 1 /home/spyro/.fvwm/pager.png
+*FvwmPager: DeskPixmap 2 /home/spyro/.fvwm/pager.png
+*FvwmPager: DeskPixmap 3 /home/spyro/.fvwm/pager.png
+
+#*FvwmPager: LabelsAbove
+*FvwmPager: NoDeskLabels
+*FvwmPager: NoMonitorLabels
+Style FvwmPager !Title, Icon, Sticky, 
+*FvwmPager: Font "xft:NotoSans:Regular:size:12:antialias=True"
+*FvwmPager: Rows 4
+*FvwmPager: Columns 1
+*FvwmPager: Hilight #d6d6d6
+*FvwmPager: Back #d6d6d6
+DesktopSize 2x2
+
+DesktopName 0 Terminal
+DesktopName 1 Internet
+DesktopName 2 Graphics
+DesktopName 3 Misc
+
+######
+# 3: Colorsets
+#
+#   0 - Default
+#   1 - Inactive Windows
+#   2 - Active Window
+#   3 - Inactive Windows Borders
+#   4 - Active Windows Borders
+#   5 - Menu - Inactive Item
+#   6 - Menu - Active Item
+#   7 - Menu - Grayed Item
+#   8 - Menu - Title
+#  10+ Modules
+###########
+#
+# aae3d0 fantasma
+# d6d6d6 blu
+# ffda49 yellow
+Colorset 0  fg #ffffff, bg #003c3c
+Colorset 1  fg #d6d6d6, bg #d6d6d6, Transparent, IconTint #d6d6d6 100
+Colorset 2  fg #ffffff, bg #003c3c
+Colorset 3  fg black, bg #4d4d4d, hi #676767, sh #303030
+Colorset 4  fg black, bg #2d2d2d, hi #474747, sh #101010
+Colorset 5  fg #000000, bg #ffffff
+Colorset 6  fg #000000, bg #d6d6d6, hi #d6d6d6, sh #d6d6d6
+Colorset 7  fg grey30, bg #ffffff
+Colorset 8  fg #000000, bg #d6d6d6, hi #d6d6d6, sh #d6d6d6, IconTint #d6d6d6 100
+
+Colorset 13 bg #d6d6d6, hi #d6d6d6, sh #d6d6d6 
+##############
+# MenuStyles #
+##############
+
+MenuStyle * MenuColorset 1, ActiveColorset 6, GreyedColorset 7, TitleColorset 8
+MenuStyle * Hilight3DOff, BorderWidth 3, HilightBack, HilightTitleBack, SeparatorsLong
+MenuStyle * TrianglesSolid, TrianglesUseFore
+MenuStyle * MouseWheel, Hilight3dThickness 1, VerticalMargins 0 0
+MenuStyle * ItemFormat "%|%3.1i%5.3l%5.3>%|"
+MenuStyle * Font "xft:NotoSans:Regular:size:16:antialias=True"
+
+DestroyMenu WindowList
+AddToMenu WindowList
+
+# Root Menu
+DestroyMenu MenuFvwmRoot
+AddToMenu   MenuFvwmRoot 
++ "&Librewolf%icons/librewolf.png%" Exec exec librewolf
++ "&Discord%icons/discord.png%" Exec exec flatpak run io.github.milkshiift.GoofCord
+#+ "" Nop
++ "&Inkscape%icons/inkscape.png%" Exec exec inkscape 
++ "&Gimp%icons/gimp.png%" Exec exec gimp
+#+ "" Nop
++ "&Alacritty%icons/terminal.png%" Exec exec alacritty 
++ "&Vim%icons/vim.png%" Exec exec alacritty --command vim 
++ "&PcManFm%icons/terminal.png%" Exec exec pcmanfm 
++ "&Frun%icons/terminal.png%" Exec exec frun 
+#+ "" Nop
++ "Re&fresh%icons/refresh.png%" Refresh
++ "&Restart%icons/restart.png%" Restart
++ "&Quit%icons/quit.png%" Module FvwmScript FvwmScript-ConfirmQuit
+
+Style * Colorset 8, HilightColorset 8, \
+        BorderColorset 13, HilightBorderColorset 6
+
+# Window Button Locations [1 Title 642]
+Mouse 1 2 A Close
+Mouse 1 4 A Maximize
+Mouse 1 6 A Iconify
+# Mouse 1 1 A Menu MenuWindowOps
+
+#ButtonStyle 2 Active Pixmap close-active.png
+#ButtonStyle 2 Inactive Pixmap close-inactive.png
+
+#ButtonStyle All Vector 3 75x25@3 25x25@3 25x75@3
+AddButtonStyle All Vector 5 20x20@3 20x80@3 80x80@3 80x20@3 20x20@3
+#AddButtonStyle All Vector 3 30x85@3 85x85@3 85x20@3
+
+AddButtonStyle 2 Vector 2 40x40@3 60x60@3
+AddButtonStyle 2 Vector 2 40x60@3 60x40@3
+
+AddButtonStyle 4 Vector 5 35x35@3 35x65@3 65x65@3 65x35@3 35x35@3
+AddButtonStyle 4 Vector 2 35x45@3 65x45@3
+AddButtonStyle 4 Vector 2 35x40@3 65x40@3
+
+AddButtonStyle 6 Vector 2 35x65@3 65x65@3
+AddButtonStyle 6 Vector 2 35x60@3 65x60@3
+TitleStyle Height 25
+ButtonStyle All -- UseTitleStyle flat
+
+Key Tab A M WindowList Root c c Border NoDeskSort NoCurrentDeskTitle
+ 
+Colorset 10 TiledPixmap /home/spyro/.fvwm/background.png
+Colorset 11 TiledPixmap /home/spyro/.fvwm/background.png
+
+DestroyModuleConfig FvwmBacker*
+*FvwmBacker: Command (Desk *, Page * 0) Colorset 10
+*FvwmBacker: Command (Desk *, Page * 1) Colorset 11
+Style * HandleWidth 0
+Style * BorderWidth 3
+Style * IconBox 0 300  -1 -1,IconGrid 00 00, IconFill Top Left,  IconSize 70 70
+
+#Style *  AddToFunc IconFunc
+#+ C DeiconifyAndRearrange
+#+ M Raise
+#+ M Move
+#+ D DeiconifyAndRearrange
+
+Mouse 1 I A DeiconifyAndRearrange
+
+BorderStyle Flat -- NoInset
+#FvwmRearrange -screen DP-2 -auto_tile
+
+ AddToFunc DeiconifyAndRearrange
+  + C Iconify off
+  + C All (CurrentPage, Iconic) PlaceAgain Icon
+
+Silent Mouse 8 W N user_Move
+Silent Mouse 9 W N user_Resize
+
+DestroyFunc user_Resize
+AddToFunc   user_Resize
++ C Resize
+
+DestroyFunc user_Move   
+AddToFunc   user_Move 
++ M Move
++ M Raise
++ C Move
++ C Raise
+
+
+# TILING
+DestroyFunc TileLeft
+AddToFunc TileLeft
++ I ThisWindow (!Shaded, !Iconic, Focused) Maximize 50 100
++ I ThisWindow (Maximized, !Shaded, !Iconic, Focused) Move +0 +0
++ I ThisWindow WarpToWindow 50 50
+
+DestroyFunc TileRight
+AddToFunc TileRight
++ I ThisWindow (!Shaded, !Iconic, Focused) Maximize 50 100
++ I ThisWindow (Maximized, !Shaded, !Iconic, Focused) Move -0 +0
++ I ThisWindow WarpToWindow 50 50
+
+DestroyFunc TileTop
+AddToFunc TileTop
++ I ThisWindow (!Shaded, !Iconic, Focused) Maximize 100 50
++ I ThisWindow (Maximized, !Shaded, !Iconic, Focused) Move +0 +0
++ I ThisWindow WarpToWindow 50 50
+
+DestroyFunc TileBottom
+AddToFunc TileBottom
++ I ThisWindow (!Shaded, !Iconic, Focused) Maximize 100 50
++ I ThisWindow (Maximized, !Shaded, !Iconic, Focused) Move +0 -0
++ I ThisWindow WarpToWindow 50 50
+
+DestroyFunc TileTopLeft
+AddToFunc TileTopLeft
++ I ThisWindow (!Shaded, !Iconic, Focused) Maximize 50 50
++ I ThisWindow (Maximized, !Shaded, !Iconic, Focused) Move +0 +0
++ I ThisWindow WarpToWindow 50 50
+
+
+DestroyFunc TileTopRight
+AddToFunc TileTopRight
++ I ThisWindow (!Shaded, !Iconic, Focused) Maximize 50 50
++ I ThisWindow (Maximized, !Shaded, !Iconic, Focused) Move -0 +0
++ I ThisWindow WarpToWindow 50 50
+
+DestroyFunc TileBottomLeft
+AddToFunc TileBottomLeft
++ I ThisWindow (!Shaded, !Iconic, Focused) Maximize 50 50
++ I ThisWindow (Maximized, !Shaded, !Iconic, Focused) Move +0 -0
++ I ThisWindow WarpToWindow 50 50
+
+DestroyFunc TileBottomRight
+AddToFunc TileBottomRight
++ I ThisWindow (!Shaded, !Iconic, Focused) Maximize 50 50
++ I ThisWindow (Maximized, !Shaded, !Iconic, Focused) Move -0 -0
++ I ThisWindow WarpToWindow 50 50
+
+Key KP_Up A M TileTop 
+Key KP_Down A M TileBottom 
+Key KP_Left A M TileLeft 
+Key KP_Right A M TileRight 
+
+Key KP_Home A M TileTopLeft 
+Key KP_Prior A M TileTopRight 
+Key KP_End A M TileBottomLeft 
+Key KP_Next A M TileBottomRight 
