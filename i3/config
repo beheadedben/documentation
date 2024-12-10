@@ -12,6 +12,7 @@
 
 set $mod Mod1
 set $terminal alacritty
+set $wallpaper /home/spyro/Pictures/perl_4.png
 
 ########
 # Font #
@@ -46,8 +47,6 @@ set $border 0
 ##########
 # Colors #
 ##########
-
-set $wallpaper /home/spyro/Pictures/perl_4.png
 
 set $bgcolor    #60FF00
 set $in-bgcolor #60FF00
