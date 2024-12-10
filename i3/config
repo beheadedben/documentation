@@ -1,11 +1,10 @@
 #	+---------------+
-#	|	[] [][][]	|
-#	|	[]     []	|
-#	|	[] [][][]	|
-#	|	[]     []	|
-#	|	[] [][][]	|
+#	|   [] [][][]   |
+#	|   []     []   |
+#	|   [] [][][]   |
+#	|   []     []   |
+#	|   [] [][][]   |
 #	+---------------+
-
 
 #############
 # Constants #
@@ -57,14 +56,23 @@ set $u-bgcolor  #5982b4
 set $indicator  #414141
 set $in-text    #969696
 
+set $fg-bar    #ffffff
+set $bg-bar    #00000000
+
+set $focused-ws-1 #20202050
+set $focused-ws-2 #20202050
+set $focused-ws-3 #ffffff
+
+set $in-ws-1 #00000000
+set $in-ws-2 #00000000
+set $in-ws-3 #ffffff
+
+# Sets the font
 font pango:$font $font_size
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
-
-# The combination of xss-lock, nm-applet and pactl is a popular choice, so
-# they are included here as an example. Modify as you see fit.
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
@@ -217,26 +225,25 @@ exec --no-startup-id conky
 # Run the picom compositor for effects
 exec_always --no-startup-id picom -c --backend glx 
 
-# Set the window border
+# Set the window border for all windows
 default_border pixel $border
 for_window [class="^.*"] border pixel $border 
-hide_edge_borders both
-
-# Start i3bar to display a workspace bar (plus the system information i3status finds out, if available)
 
 gaps inner $gaps_inner
 gaps outer $gaps_outer
 
+# Start i3bar to display a workspace bar (plus the system information i3status finds out, if available)
 bar {
 	i3bar_command i3bar --transparency
 	status_command i3blocks
-	colors {
-		statusline #ffffff
-		background #00000000
-		focused_workspace  #20202050 #20202050 #ffffff
-		inactive_workspace #00000000 #00000000 #ffffff
-	}
 	strip_workspace_numbers yes
-	#strip_workspace_name no
+	# strip_workspace_name no
 	separator_symbol " "
+
+	colors {
+		statusline $fg-bar
+		background $bg-bar
+		focused_workspace $focused-ws-1 $focused-ws-2 $focused-ws-3
+		inactive_workspace $in-ws-1 $in-ws-2 $in-ws3
+	}
 }
