@@ -1,9 +1,20 @@
-"	|-----------------|
-"	| \    / | |\  /| |
-"	|  \  /  | | \/ | |
-"	|   \/   | |    | |
-"	|-----------------|
-"
+"	+---------------------+
+"	|	\    / | |\  /|   |
+"	|	 \  /  | | \/ |   |
+"	|	  \/   | |    |   |
+"	+---------------------+
+
+"Starts a terminal at the bottom of the window
+autocmd VimEnter * botright term
+
+"Resizes the terminal properly
+autocmd VimEnter * resize -15%
+
+"Automatically opens
+autocmd VimEnter * NERDTree
+
+"Retro colorscheme
+colorscheme=murphy
 
 "Displays tabs and spaces as characters
 set listchars=tab:――➤,space:•
