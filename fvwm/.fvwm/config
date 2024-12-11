@@ -6,23 +6,18 @@
 #	|   []             []         []      []     []      []   |
 #	+---------------------------------------------------------+
 
-
 #########
 # Fonts #
 #########
 
-DefaultFont "xft:NotoSans:Regular:size=12:antialias=True"
-
+DefaultFont "xft:Hack:Regular:size=13:antialias=True"
 
 DestroyFunc StartFunction
 AddToFunc   StartFunction
-# + I Test (Init) Exec exec stalonetray 
++ I Test (Init) Exec exec stalonetray 
 #+ I Test (Init) Exec fvwm-root -r \
-    $[FVWM_USERDIR]/wallpapers/background.png
-# + I Test (Init) Exec exec vlc
-+ I Test (Restart) PipeRead 'echo Echo Restarted: `date`'
+#+  $[FVWM_USERDIR]/wallpapers/background.png
 + I Module FvwmBanner
-# + I Module FvwmPager 0 2
 + I Module FvwmPager 0 3 
 + I Module FvwmButtons MyButtons
 + I Module FvwmBacker
