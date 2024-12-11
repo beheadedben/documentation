@@ -161,7 +161,10 @@ BorderStyle Flat -- NoInset
   + C Iconify off
   + C All (CurrentPage, Iconic) PlaceAgain Icon
 
+# Move Windows with mouse side button
 Silent Mouse 8 W N user_Move
+
+# Resize Windows with mouse side button
 Silent Mouse 9 W N user_Resize
 
 DestroyFunc user_Resize
@@ -175,8 +178,10 @@ AddToFunc   user_Move
 + C Move
 + C Raise
 
+##########
+# TILING #
+##########
 
-# TILING
 DestroyFunc TileLeft
 AddToFunc TileLeft
 + I ThisWindow (!Shaded, !Iconic, Focused) Maximize 50 100
@@ -206,7 +211,6 @@ AddToFunc TileTopLeft
 + I ThisWindow (!Shaded, !Iconic, Focused) Maximize 50 50
 + I ThisWindow (Maximized, !Shaded, !Iconic, Focused) Move +0 +0
 + I ThisWindow WarpToWindow 50 50
-
 
 DestroyFunc TileTopRight
 AddToFunc TileTopRight
