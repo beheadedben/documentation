@@ -14,5 +14,5 @@ Alternatively, compile from source.
 >$ tar -xvf fvwm.3-1.1.0.tar.gz fvwm3
 >```
 >```
->$ cd fvwm3 & ./configure && make && sudo make install
+>$ cd fvwm3 && ./configure && make && sudo make install
 >```
