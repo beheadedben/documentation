@@ -30,9 +30,34 @@ To connect from your desktop to your android device
 > To find your username use `whoami` in your termux session, and use `passwd` to set your password
 
 If the shell is buggy, add the following to your termux `.bashrc` file
->```
->export TERM=xterm-256color
->```
+> ```
+> export TERM=xterm-256color
+> ```
+
+To install any package e.g `nodejs` run the following
+> ```
+> $ apt update && apt upgrade
+> $ pkg install nodejs
+> ```
+
+## Use PlantUML from Termux
+Because you need an X11 server installed to compile plantuml in termux,
+it's way easier if you give the job to a web server like `www.plantuml.com`
+
+After you've created your `myDiagram.puml` file,
+download `encodePuml.js` and `runPuml.sh` and run:
+> ```
+> $ npm install plantuml-encoder
+> ```
+
+> ```
+> $ chmod +x runPuml.sh
+> ```
+
+Now to generate your PlantUml file as png
+> ```
+> $ ./runPuml.sh myDiagram.puml
+> ```
 
 ## Resources
 https://mansoorbarri.com/guides/termux-ssh/
