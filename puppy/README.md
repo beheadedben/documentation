@@ -4,6 +4,9 @@
 First off install the `mariadb_server` package from `ppm`.
 Now run the following:
 >```
+> $ adduser mysql
+>```
+>```
 > $ chown -R mysql /var/lib/mysql
 >```
 >```
@@ -33,4 +36,6 @@ Run the following in the terminal once:
 > $ dot -c
 >```
 
+# Resources
+- <https://www.forum.puppylinux.com/viewtopic.php?t=4489/>
 You are now ready to go!
