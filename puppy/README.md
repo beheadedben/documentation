@@ -10,6 +10,9 @@ Now run the following:
 > $ chown -R mysql /var/lib/mysql
 >```
 >```
+> $ mysql_install_db --user=mysql --ldata=/var/lib/mysql
+>```
+>```
 > $ mysqld --initialize --user=mysql
 >```
 >```
