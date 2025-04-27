@@ -46,6 +46,11 @@ Composer may return an error if it doesn't find the php binary at `/usr/bin/php`
 > $ sudo ln -s /usr/bin/php7.4 /usr/bin/php
 > ```
 
+You can verify your php modules running
+> ```
+> $ php -m
+> ```
+
 # Resources
 - <https://www.forum.puppylinux.com/viewtopic.php?t=4489/>
 You are now ready to go!
