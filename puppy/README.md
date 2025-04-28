@@ -40,13 +40,42 @@ Run the following in the terminal once:
 >```
 
 # How to install composer
-First install `composer` and `php-json` from `ppm`.
+First install `composer`, `php-json`, `php-phar` from `ppm`.
 Composer may return an error if it doesn't find the php binary at `/usr/bin/php`.
 > ```
 > $ sudo ln -s /usr/bin/php7.4 /usr/bin/php
 > ```
 
 You can verify your php modules running
+> ```
+> $ php -m
+> ```
+
+If a module isn't listed you have to load it inside of your `php.ini` file.
+to find where php is looking for `php.ini`, run the following command:
+
+> ```
+> $ php --ini
+> ```
+
+To find your default template configs, run the following:
+> ```
+> $ find / -name "php.ini*" 2>/dev/null
+> ```
+
+Copy the one you want to use to the location told by `php --ini`.
+For example you might run:
+> ```
+> $ cp /etc/php/7.4/cli/conf.d/php.ini-development /etc/php/7.4/cli/php.ini
+> ```
+
+Add to it the followings:
+```
+extension=json.so
+extension=phar.so
+```
+
+Now run this again to see if the modules got loaded correctly:
 > ```
 > $ php -m
 > ```
