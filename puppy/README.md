@@ -105,6 +105,8 @@ To compile it run:
 > ```
 > $ make install
 > ```
+You can place the directory inside of `my-applications`, and create the 
+symbolic link to `php/sapi/cli/php`.
 
 # Resources
 1. <https://www.forum.puppylinux.com/viewtopic.php?t=4489/>
