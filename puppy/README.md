@@ -39,6 +39,8 @@ Run the following in the terminal once:
 > $ dot -c
 >```
 
+You are now ready to go!
+
 # How to install composer
 First install `composer`, `php-json`, `php-phar` from `ppm`.
 Composer may return an error if it doesn't find the php binary at `/usr/bin/php`.
@@ -80,6 +82,12 @@ Now run this again to see if the modules got loaded correctly:
 > $ php -m
 > ```
 
+You might get a memory limit error, to increase the limit add the following
+to your `php.ini`:
+```
+memory_limit=2G
+```
 # Resources
-- <https://www.forum.puppylinux.com/viewtopic.php?t=4489/>
-You are now ready to go!
+1. <https://www.forum.puppylinux.com/viewtopic.php?t=4489/>
+2. <https://getcomposer.org/doc/articles/troubleshooting.md#memory-limit-errors>
+
