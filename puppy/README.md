@@ -85,8 +85,27 @@ Now run this again to see if the modules got loaded correctly:
 You might get a memory limit error, to increase the limit add the following
 to your `php.ini`:
 ```
-memory_limit=2G
+memory_limit=-1
 ```
+
+# How to install php 8.4
+`ppm` provides an old version of php, 7.4. If you want to install
+the latest version of php then download the source code from 
+<https://www.php.net/downloads.php>. Extract it.
+To compile it run:
+> ```
+> $ ./configure
+> ```
+> ```
+> $ make
+> ```
+> ```
+> $ make test
+> ```
+> ```
+> $ make install
+> ```
+
 # Resources
 1. <https://www.forum.puppylinux.com/viewtopic.php?t=4489/>
 2. <https://getcomposer.org/doc/articles/troubleshooting.md#memory-limit-errors>
