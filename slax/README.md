@@ -33,7 +33,7 @@ If you are running the debian based version you can install all your software th
 >```
 
 >```
-> $ apt install keepassxc nodejs curl git openjdk-17-jre composer npm
+> $ apt install keepassxc nodejs curl git openjdk-17-jre composer npm php-curl
 >```
 
 To install the rustup toolchain:
