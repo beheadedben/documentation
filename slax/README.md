@@ -40,3 +40,32 @@ To install the rustup toolchain:
 >```
 >$ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 >```
+
+# Data Recovery
+
+When you shutdown brutally you might become unable to boot your Slax session. In that case 
+you should boot with a new session and then run the following commands.
+
+You need xfs_repair which is contained inside of `xfsprogs`.
+>```
+> $ apt install xfsprogs
+>```
+
+This will mount the changes as a single virtual file at `/mnt/virtual.dat`
+>```
+> $ /run/initramfs/bin/@mount.dynfilefs -f /media/sdb1/slax/changes/1/changes.dat -m /mnt
+>```
+> Where sdb1 is the slax usb key and 1 is the session name
+
+As you can't boot into slax with the session you are trying to recover,
+the virtual.dat XFS filesystem is likely unreadable. To repair it run the following.
+>```
+> $ xfs_repair -L /mnt/virtual.dat
+>```
+
+Mount the filesystem with:
+>```
+> $ mount -o loop /mnt/virtual.dat /mnt
+>```
+
+Now enter `/mnt` and backup your files.
