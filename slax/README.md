@@ -69,3 +69,5 @@ Mount the filesystem with:
 >```
 
 Now enter `/mnt` and backup your files.
+
+[Slax Docs](https://www.slax.org/starting.php)
