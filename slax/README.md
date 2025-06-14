@@ -36,9 +36,33 @@ If you are running the debian based version you can install all your software th
 > $ apt install keepassxc nodejs curl git openjdk-17-jre composer npm php-curl
 >```
 
+To install the latest version of Inkscape, use flatpak.
+First install flatpak with:
+>```
+> $ apt install flatpak
+>```
+
+Now add the flathub repo
+>```
+> $ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+>```
+
+Install flathub and inkscape with:
+>```
+> $ flatpak install flathub org.inkscape.Inkscape
+>```
+
+>```
+> $ flatpak override --user --filesystem=xdg-data
+>```
+
+>```
+> $ flatpak make-current org.inkscape.Inkscape stable
+>```
+
 To install the rustup toolchain:
 >```
->$ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+> $ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 >```
 
 # Tor Browser Installation
