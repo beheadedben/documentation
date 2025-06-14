@@ -52,14 +52,6 @@ Install flathub and inkscape with:
 > $ flatpak install flathub org.inkscape.Inkscape
 >```
 
->```
-> $ flatpak override --user --filesystem=xdg-data
->```
-
->```
-> $ flatpak make-current org.inkscape.Inkscape stable
->```
-
 To install the rustup toolchain:
 >```
 > $ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
