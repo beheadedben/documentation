@@ -41,6 +41,40 @@ To install the rustup toolchain:
 >$ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 >```
 
+# Tor Browser Installation
+To install the tor browser head over to the official site, downlad the archive and extract it.
+You can't run tor as root and so create a new user
+>```
+> $ adduser myuser
+>```
+
+That will create the `home` folder `/home/myuser/`.
+Move the `tor-browser` folder into it.
+
+Give permissions as root to the new user
+>```
+> $ chown -R myuser: /home/myuser/tor-browser
+>```
+
+Now give permissions to access the X11 display with:
+>```
+> $ xhost +SI:localuser:myuser
+>```
+
+Log as `myuser`
+>```
+> $ su myuser
+>```
+
+Now run the tor browser with:
+>```
+> $ cd /home/myuser/tor-browser
+>```
+
+>```
+> $ ./start-tor-browser.desktop
+>```
+
 # Data Recovery
 
 When you shutdown brutally you might become unable to boot your Slax session. In that case 
