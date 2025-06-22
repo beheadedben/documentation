@@ -142,4 +142,4 @@ Now try mounting again.
 
 ## Resources
 [Slax Docs](https://www.slax.org/starting.php)
-[https://access.redhat.com/solutions/5494781]
+(https://access.redhat.com/solutions/5494781)
