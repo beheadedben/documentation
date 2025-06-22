@@ -120,4 +120,12 @@ Mount the filesystem with:
 
 Now enter `/mnt` and backup your files.
 
+If after following these steps you are unable to mount and you receive an error like:
+```
+wrong fs type, bad option, bad superblock on /dev/loop7, missing codepage or helper program, or other error.
+       dmesg(1) may have more information after failed mount system call.
+```
+
+Run, as the error message says, `dmesg` to debug the error.
+
 [Slax Docs](https://www.slax.org/starting.php)
