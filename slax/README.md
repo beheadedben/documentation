@@ -23,7 +23,23 @@ Go into `/slax/boot` and run `bootinst.bat`.
 
 All changes made to Slax will be automatically persistent at reboot.
 
+If when booting from your USB stick you end up with a black screen you may have to enable CMS in your BIOS,
+and if you end up with a TTY only and you have an Nvidia graphics card, try running with the kernel parameter
+>```
+> nouveau.modeset=0
+>```
+
 # Customisation
+
+If you want the latest software you can upgrade to Debian Sid, the unstable branch of Debian. To do that run:
+>```
+> nano etc/apt/sources.list
+>```
+Comment out everything with `#` and add
+>```
+> deb http://deb.debian.org/debian unstable main contrib non-free
+> deb-src http://deb.debian.org/debian unstable main contrib non-free
+>```
 
 To change the default wallpaper, substitute `/usr/share/wallpapers/slax_wallpaper.jpg` with another image.
 If you are running the debian based version you can install all your software through apt.
